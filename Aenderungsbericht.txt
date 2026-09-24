@@ -1,0 +1,25 @@
+Änderungsbericht – Contact Manager
+Stand: 24.09.2026
+
+Umgesetzt:
+- Altes einfaches Contact-Modell durch die geforderte Vererbung ersetzt:
+  Person -> Customer / Employee -> Trainee.
+- Entity Framework Core / SQLite beibehalten und als TPH konfiguriert.
+- Neue EF-Core-Migration für Persons und CustomerContactNotes erstellt.
+- Alte Contacts-Tabelle bleibt erhalten; alte Kontakte werden bei der Migration zusätzlich als Kunden übernommen.
+- Mitarbeiter-CRUD inkl. Aktiv/Passiv und automatischer GUID-Mitarbeiternummer umgesetzt.
+- Lernenden-Felder umgesetzt.
+- Kunden-CRUD inkl. Aktiv/Passiv und Kundentyp A-E umgesetzt.
+- Kundenkontaktnotizen mit Datum/Uhrzeit und Historie umgesetzt.
+- Suche auf praktisch alle Personen-, Mitarbeiter-, Kunden- und Notizfelder erweitert.
+- WinForms-Hauptfenster in Mitarbeiter- und Kunden-Tab aufgeteilt.
+- Separate Eingabeformulare für Mitarbeiter und Kunden sowie Notizhistorie ergänzt.
+- Validierung und Fehlerbehandlung ausgebaut.
+- Gruppenmitglieder.txt und Funktionsstatus.txt ergänzt.
+- Projekt von alten bin/obj/.vs-Artefakten bereinigt.
+
+Prüfung in dieser Umgebung:
+- Quellcode strukturell/statisch geprüft.
+- SQLite-Schema und Foreign-Key-Cascade mit einer temporären Datenbankkopie geprüft.
+- dotnet build konnte NICHT ausgeführt werden, weil das .NET SDK in dieser Umgebung nicht installiert ist.
+- Ein echter WinForms-Laufzeittest unter Windows ist deshalb vor der Abgabe zwingend empfohlen.

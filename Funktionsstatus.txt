@@ -1,0 +1,40 @@
+Contact Manager – Funktionsstatus
+Stand: 24.09.2026
+
+IMPLEMENTIERT UND STATISCH GEPRÜFT:
+- Vererbungshierarchie Person -> Customer / Employee
+- Mitarbeiter erfassen, anzeigen, bearbeiten und löschen
+- Mitarbeiter aktivieren und deaktivieren, ohne sie zu löschen
+- Automatische Vergabe einer GUID-Mitarbeiternummer
+- Lernende mit Anzahl Lehrjahren und aktuellem Lehrjahr
+- Kunden erfassen, anzeigen, bearbeiten und löschen
+- Kunden aktivieren und deaktivieren, ohne sie zu löschen
+- Kundentyp A-E
+- Kontaktnotizen pro Kunde mit Datum/Uhrzeit und Historie
+- Suche über die gespeicherten Mitarbeiter- und Kundeninformationen
+- Persistente Speicherung in SQLite
+- Eingabevalidierung für Pflichtfelder, E-Mail, Telefonnummern, PLZ,
+  Beschäftigungsgrad, Kaderstufe, Datumslogik und Lehrjahre
+- Fehlerbehandlung und Logging
+
+NICHT IN DIESER BEARBEITUNGSUMGEBUNG AUSFÜHRBAR/GETESTET:
+- dotnet restore und dotnet build (das .NET SDK ist in der Umgebung nicht installiert)
+- Interaktiver WinForms-Laufzeittest unter Windows
+- Visuelle Kontrolle aller Formulare in Visual Studio
+
+VOR DER ABGABE NOCH DURCHFÜHREN:
+1. Solution in Visual Studio 2022 öffnen.
+2. NuGet-Pakete wiederherstellen.
+3. Solution erstellen (Build).
+4. Anwendung starten und die CRUD-/Such-/Notiz-Abläufe einmal manuell prüfen.
+5. Falls dabei ein Fehler auffällt, diesen beheben und diese Datei aktualisieren.
+
+OPTIONALE FUNKTIONEN NICHT IMPLEMENTIERT:
+- Login
+- Dashboard
+- CSV-/VCard-Import
+- Allgemeine Mutationshistorie aller Kontaktdaten
+
+Hinweis zur alten Version:
+Die bisherige Tabelle "Contacts" wird durch die neue Migration nicht gelöscht.
+Vorhandene alte Kontakte werden einmalig zusätzlich als Kunden in das neue Personenmodell übernommen.
